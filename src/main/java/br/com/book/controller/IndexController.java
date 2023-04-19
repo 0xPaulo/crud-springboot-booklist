@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class IndexController {
     
-    @RequestMapping("/lista")
+    @RequestMapping("/list")
     private ModelAndView getLista() {
         ModelAndView mv = new ModelAndView("index");
         return mv;

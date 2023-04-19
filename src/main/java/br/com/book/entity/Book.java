@@ -8,19 +8,27 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Entity(name = "my_book_table")
-@Table(name = "my_book_table")
+@Entity(name = "book")
+@Table(name = "book")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
+    @NotBlank
     @Column
     private String name;
 
-    @JoinColumn(name = "author_id")
+    @JoinColumn(name = "author_id") // tem que ser nessa ordem
     @ManyToOne
     private Author author;
 

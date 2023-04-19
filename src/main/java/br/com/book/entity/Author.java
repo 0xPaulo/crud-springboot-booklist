@@ -6,15 +6,21 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Entity(name = "my_author_table")
-@Table(name = "my_author_table")
+@Entity(name = "author")
+@Table(name = "author")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+
 public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
 
     @Column
-    private String nome;
-
+    private String name;
 }
